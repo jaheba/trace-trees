@@ -26,7 +26,14 @@ What are the charasteristics of tracing JITs that can lead to unpredictable perf
 
 ## Related Work Papers
 
-* **Exploring optimal compilation unit shapes for an embedded just-in-time compiler**
-    Bruening, D. Duesterwald, E.
+* **Efficient Path Profiling**; *1996*; Ball, T. Larus J.R.
+
+    **Summary**: Profiling just the edges of a CFG (i.e. DAGs (directed acylic graphs)) blurs the actual path taken during execution. The authors instead describe an algorithm that adds manageable overhead during tracing (31% over 16% when just recording edges) but delivers accurate results. By assigning values to some edges and accumulating these values during execution leads to a unique number which identifies the path taken.
+
+* **Exploring optimal compilation unit shapes for an embedded just-in-time compiler**; *2000*; Bruening, D. Duesterwald, E.
 
     **Summary:** Comparison of traces, loops and methods with respect to how much hot code each strategy covers. Conclusion: mix of loops and methods, or traces and methods work best, establish a 90/10 rule.
+
+* **Incremental Dynamic Code Generation with Trace Trees**; *2006*; Gal, A. Franz. M
+
+    **Summary:** The authors prodive a model for trace-trees and describe a prototype implementation for the JamVM. They compare their results to other Java VMs, most notably hotspot over 7 benchmarks. Their protoype implementation reaches a speedup over pure interpreted execution of 7, whilst HotSpot maintains a 10x speedup. The authors highlight that compared to HotSpot their implementation compilres 100-700x faster and emits 30x less code.
