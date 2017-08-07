@@ -30,6 +30,10 @@ What are the charasteristics of tracing JITs that can lead to unpredictable perf
 
     **Summary**: Profiling just the edges of a CFG (i.e. DAGs (directed acylic graphs)) blurs the actual path taken during execution. The authors instead describe an algorithm that adds manageable overhead during tracing (31% over 16% when just recording edges) but delivers accurate results. By assigning values to some edges and accumulating these values during execution leads to a unique number which identifies the path taken.
 
+* **Softare Profiling for Hot Path Prediction: Less is More**; *2000*; Duesterwale, E. Bala, V.
+
+    **Summary:** The authors show that in dynamic compilation systems path profile accuracy is less important than fast results. "Offline profiles are summaries of program behaviour while online profiles are predictions." Instead of using path profiles, only potential loop headers have associated counters. Also, choosing the right threshold value (called delay in the paper) has an impact on performance and has to balance opportunity costs.
+
 * **Exploring optimal compilation unit shapes for an embedded just-in-time compiler**; *2000*; Bruening, D. Duesterwald, E.
 
     **Summary:** Comparison of traces, loops and methods with respect to how much hot code each strategy covers. Conclusion: mix of loops and methods, or traces and methods work best, establish a 90/10 rule.
